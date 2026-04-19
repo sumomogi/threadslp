@@ -1,0 +1,136 @@
+/* ── TOKENS ── */
+:root {
+  --navy:           #003057;   /* hero, step numbers */
+  --navy-specialty: #1a5280;   /* specialty cards */
+  --navy-cta:       #2d6e9e;   /* CTA section */
+  --navy-deep:      #001f3d;
+  --navy-light:     #e8eef5;
+  --surface:        #f3f5f8;
+  --card:           #ffffff;
+  --pill-bg:        #edf1f6;
+  --muted:          #7a8fa6;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── BASE ── */
+body {
+  font-family: 'Pretendard JP', 'Pretendard', system-ui, sans-serif;
+  background: var(--surface);
+  color: #111;
+  padding: 40px 20px 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ── CARD BASE ── */
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+
+/* ── ARCHIVE ITEM ── */
+.archive-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 14px;
+  background: var(--pill-bg);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+  gap: 12px;
+  transition: background 0.15s;
+}
+.archive-item:last-child { margin-bottom: 0; }
+.archive-item:hover { background: var(--navy-light); }
+.archive-title { font-size: 13px; font-weight: 600; margin-bottom: 3px; line-height: 1.4; }
+.archive-meta  { font-size: 11px; color: var(--muted); }
+.archive-arrow { flex-shrink: 0; width: 16px; height: 16px; color: var(--navy); opacity: 0.25; }
+
+/* ── TAGS ── */
+.tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.tag.series { background: var(--navy);              color: #fff; }
+.tag.topic  { background: rgba(0,48,87,0.1);        color: var(--navy); }
+
+/* ── TAG PILL (specialty cards) ── */
+.tag-pill {
+  font-size: 11px;
+  background: rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.68);
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.13);
+}
+.tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+/* ── SPECIALTY CARD ── */
+.specialty {
+  background: var(--navy-specialty);
+  color: #fff;
+  border-radius: 16px;
+  padding: 32px 26px;
+  margin-bottom: 10px;
+}
+.specialty:last-of-type { margin-bottom: 0; }
+.specialty-eyebrow {
+  font-size: 10px; letter-spacing: 2.5px;
+  color: rgba(255,255,255,0.3); font-weight: 600;
+  margin-bottom: 16px; text-transform: uppercase;
+}
+.specialty-title { font-size: 17px; font-weight: 700; line-height: 1.45; margin-bottom: 14px; }
+.specialty-desc  { font-size: 12.5px; color: rgba(255,255,255,0.52); line-height: 1.95; margin-bottom: 20px; }
+
+/* ── PROCESS STEP ── */
+.process-step {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--pill-bg);
+}
+.process-step:first-child { padding-top: 0; }
+.process-step:last-child  { border-bottom: none; padding-bottom: 0; }
+.step-num {
+  flex-shrink: 0; width: 32px; height: 32px;
+  background: var(--navy); color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+}
+.step-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--navy-deep); padding-top: 4px; }
+.step-desc  { font-size: 12px; color: var(--muted); line-height: 1.75; }
+
+/* ── FOOTER ── */
+.footer { font-size: 11px; color: #b0bfcc; text-align: center; margin-top: 4px; }
+
+/* ── SVG ICON HELPER ── */
+.icon { display: inline-block; vertical-align: middle; }
