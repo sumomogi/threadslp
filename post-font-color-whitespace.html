@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI 결과물이 싸 보이는 이유 — 폰트·색·여백 3가지 규칙으로 랜딩페이지 완성도를 높이는 법">
+<title>AI 결과물이 "싸 보이는" 이유 — @ceetokyolee</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard-jp/dist/web/static/pretendard-jp.css">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wdz0a6bau4");
+</script>
+<style>
+  /* ── POST-ONLY STYLES ── */
+  .back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    text-decoration: none; margin-bottom: 4px;
+  }
+  .back svg { width: 14px; height: 14px; }
+
+  .post-hero {
+    background: var(--navy); color: #fff;
+    border-radius: 20px; padding: 40px 28px 36px;
+  }
+  .post-hero .category {
+    font-size: 10px; letter-spacing: 3px; font-weight: 700;
+    color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .post-hero h1 {
+    font-size: 20px; font-weight: 700; line-height: 1.5;
+    letter-spacing: -0.3px; margin-bottom: 16px;
+  }
+  .post-hero .meta { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+  .post-card { background: var(--card); border-radius: 20px; padding: 32px 24px; }
+
+  .post-card p {
+    font-size: 13.5px; line-height: 1.95; color: #333;
+    margin-bottom: 16px;
+  }
+  .post-card p:last-child { margin-bottom: 0; }
+
+  .post-h2 {
+    font-size: 15px; font-weight: 700; color: var(--navy-deep);
+    margin-bottom: 16px; letter-spacing: -0.2px;
+  }
+
+  .rule-card {
+    background: var(--pill-bg); border-radius: 16px;
+    padding: 24px 20px; margin-bottom: 10px;
+  }
+  .rule-card:last-child { margin-bottom: 0; }
+  .rule-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: var(--navy); opacity: 0.45; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .rule-title { font-size: 14px; font-weight: 700; color: var(--navy-deep); margin-bottom: 10px; }
+  .rule-body { font-size: 12.5px; line-height: 1.85; color: #555; margin-bottom: 14px; }
+  .rule-body:last-child { margin-bottom: 0; }
+
+  .font-list { list-style: none; margin: 10px 0 14px; }
+  .font-list li {
+    font-size: 12px; line-height: 1.7; color: #555;
+    padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .font-list li:last-child { border-bottom: none; }
+  .font-list li strong { color: var(--navy-deep); font-weight: 700; }
+
+  .prompt-box {
+    background: var(--navy); color: rgba(255,255,255,0.85);
+    border-radius: 10px; padding: 14px 16px;
+    font-size: 12px; line-height: 1.7; margin-top: 12px;
+  }
+  .prompt-box .prompt-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 6px;
+  }
+
+  .bonus-card {
+    background: #f0f4f8; border-radius: 16px; padding: 24px 20px;
+    border-left: 3px solid var(--navy);
+  }
+  .bonus-card .bonus-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: var(--navy); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .bonus-card p { font-size: 12.5px; line-height: 1.85; color: #555; margin-bottom: 12px; }
+  .bonus-card p:last-child { margin-bottom: 0; }
+
+  .practice-card {
+    background: var(--navy); color: #fff;
+    border-radius: 20px; padding: 32px 24px;
+  }
+  .practice-card .practice-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .practice-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
+  .practice-list { list-style: none; }
+  .practice-list li {
+    font-size: 12.5px; color: rgba(255,255,255,0.7); line-height: 1.7;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .practice-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .practice-list li code {
+    display: block; margin-top: 6px;
+    font-family: 'Pretendard JP', monospace;
+    font-size: 11.5px; color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.07);
+    border-radius: 6px; padding: 8px 10px; line-height: 1.6;
+  }
+
+  .next-card {
+    background: var(--card); border-radius: 16px; padding: 20px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    text-decoration: none; color: inherit;
+    border: 1px solid var(--pill-bg);
+    transition: background 0.15s;
+  }
+  .next-card:hover { background: var(--pill-bg); }
+  .next-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+  .next-title { font-size: 13px; font-weight: 600; color: var(--navy-deep); line-height: 1.4; }
+  .next-arrow { flex-shrink: 0; width: 16px; height: 16px; color: var(--navy); opacity: 0.3; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+    아카이브로 돌아가기
+  </a>
+
+  <!-- HERO -->
+  <div class="post-hero">
+    <div class="category">AI &amp; 디자인</div>
+    <h1>AI 결과물이 "싸 보이는" 이유<br>— 폰트·색·여백 3가지</h1>
+    <div class="meta">@ceetokyolee · 2026</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="post-card">
+    <p>AI로 랜딩페이지 초안을 뽑았다. 레이아웃도 잡혔고 문구도 나쁘지 않다. 그런데 막상 화면을 보니 뭔가 이상하다. 클릭하고 싶지 않은 이 느낌. 싸 보이는 이 느낌.</p>
+    <p>처음엔 AI가 부족한 거라고 생각했다. 아니면 내 프롬프트가 부족한 거라고. 그런데 알고 보니 둘 다 아니었다. 문제는 디자인의 기본 규칙을 아무도 알려주지 않았다는 것이었다.</p>
+    <p>미감은 타고나는 게 아니다. 미감처럼 보이는 것들 대부분은 사실 규칙이다. 오늘은 그중 가장 빠르게 효과를 보는 3가지를 소개한다.</p>
+  </div>
+
+  <!-- RULES -->
+  <div class="post-card">
+    <div class="post-h2">규칙 3가지</div>
+
+    <!-- RULE 1 -->
+    <div class="rule-card">
+      <div class="rule-eyebrow">Rule 01</div>
+      <div class="rule-title">폰트 — 트렌딩 폰트를 직접 지정해라</div>
+      <p class="rule-body">AI는 지시가 없으면 Inter, Helvetica 같은 기본 폰트를 쓴다. 기능적으로는 완벽하지만, 요즘 우리가 보는 웹·앱 화면과는 거리가 있다. 폰트 이름을 직접 말해줘야 한다.</p>
+
+      <ul class="font-list">
+        <li><strong>모던 테크 / SaaS</strong> — Geist, DM Sans</li>
+        <li><strong>크리에이티브 / 에이전시</strong> — Syne, Clash Display</li>
+        <li><strong>럭셔리 / 프리미엄</strong> — Playfair Display, Cormorant</li>
+        <li><strong>플레이풀 / 소비자 앱</strong> — Nunito, Quicksand</li>
+        <li><strong>한국어</strong> — Pretendard, Wanted Sans, Noto Serif KR</li>
+        <li><strong>일본어</strong> — Pretendard JP, M PLUS 1p, Shippori Mincho</li>
+      </ul>
+
+      <div class="prompt-box">
+        <div class="prompt-label">프롬프트 예시</div>
+        제목에는 Syne, 본문에는 DM Sans를 써줘. 대담하고 모던한 크리에이티브 에이전시 느낌으로.
+      </div>
+    </div>
+
+    <!-- RULE 2 -->
+    <div class="rule-card">
+      <div class="rule-eyebrow">Rule 02</div>
+      <div class="rule-title">색 — 3가지를 넘기지 마라</div>
+      <p class="rule-body">히어로 섹션에 파랑+주황+초록+보라가 다 들어가 있다면 그게 싸 보이는 이유다. 디자인에는 60-30-10 규칙이 있다.</p>
+      <p class="rule-body">배경색 60% + 주조색 30% + 액센트 10%. 이 비율만 지켜도 복잡해 보이지 않으면서도 포인트가 살아난다.</p>
+      <div class="prompt-box">
+        <div class="prompt-label">프롬프트 예시</div>
+        60-30-10 색상 규칙으로 구성해줘. 액센트 색은 하나만, 배경은 차분한 중립색으로.
+      </div>
+    </div>
+
+    <!-- RULE 3 -->
+    <div class="rule-card">
+      <div class="rule-eyebrow">Rule 03</div>
+      <div class="rule-title">여백 — 더 비워라</div>
+      <p class="rule-body">AI로 만든 랜딩페이지에서 가장 자주 보이는 문제가 빽빽함이다. 비싸 보이는 랜딩페이지의 공통점은 여백이다. 여백은 빈 공간이 아니라 독자가 숨을 고르는 공간이다.</p>
+      <div class="prompt-box">
+        <div class="prompt-label">프롬프트 예시</div>
+        섹션 사이 여백을 넉넉하게 잡아줘. 텍스트 블록 주변에도 여유 공간을 충분히 줘.
+      </div>
+    </div>
+  </div>
+
+  <!-- BONUS -->
+  <div class="post-card">
+    <div class="post-h2">보너스</div>
+    <div class="bonus-card">
+      <div class="bonus-label">비교도 AI에게 시켜라</div>
+      <p>평소에 "왠지 좋아 보인다"고 느꼈던 웹사이트를 스크린샷 찍어서 클로드에게 보내보자.</p>
+      <div class="prompt-box" style="margin-top: 0;">
+        <div class="prompt-label">프롬프트 예시</div>
+        이 페이지의 폰트, 색 팔레트, 여백을 분석하고 내 랜딩페이지와 비교해줘.
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="practice-card">
+    <div class="practice-label">이번 주 실습</div>
+    <h3>AI로 랜딩페이지를 만들 때<br>이 3줄을 추가해보세요</h3>
+    <ul class="practice-list">
+      <li>
+        폰트를 직접 지정한다
+        <code>제목에는 [폰트명], 본문에는 [폰트명]을 써줘. [브랜드 분위기] 느낌으로.</code>
+      </li>
+      <li>
+        색을 3가지로 제한한다
+        <code>60-30-10 색상 규칙으로 구성해줘. 액센트 색은 하나만.</code>
+      </li>
+      <li>
+        여백을 넉넉하게 잡는다
+        <code>섹션 사이 여백을 넉넉하게. 텍스트 주변에도 여유 공간을 충분히.</code>
+      </li>
+    </ul>
+  </div>
+
+  <!-- NEXT -->
+  <a class="next-card" href="#">
+    <div>
+      <div class="next-label">다음 편</div>
+      <div class="next-title">AI 프롬프트에 디자인 언어를 쓰는 법</div>
+    </div>
+    <svg class="next-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+    </svg>
+  </a>
+
+  <p class="footer">Threads · @ceetokyolee</p>
+
+</div>
+</body>
+</html>
