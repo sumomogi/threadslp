@@ -9,6 +9,8 @@
   --card:           #ffffff;
   --pill-bg:        #edf1f6;
   --muted:          #7a8fa6;
+  --text:           #111;
+  --footer:         #b0bfcc;
 }
 
 /* ── RESET ── */
@@ -18,7 +20,7 @@
 body {
   font-family: 'Pretendard JP', 'Pretendard', system-ui, sans-serif;
   background: var(--surface);
-  color: #111;
+  color: var(--text);
   padding: 40px 20px 80px;
   -webkit-font-smoothing: antialiased;
 }
@@ -65,6 +67,7 @@ body {
 }
 .archive-item:last-child { margin-bottom: 0; }
 .archive-item:hover { background: var(--navy-light); }
+.archive-item:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 .archive-title { font-size: 13px; font-weight: 600; margin-bottom: 3px; line-height: 1.4; }
 .archive-meta  { font-size: 11px; color: var(--muted); }
 .archive-arrow { flex-shrink: 0; width: 16px; height: 16px; color: var(--navy); opacity: 0.25; }
@@ -130,7 +133,12 @@ body {
 .step-desc  { font-size: 12px; color: var(--muted); line-height: 1.75; }
 
 /* ── FOOTER ── */
-.footer { font-size: 11px; color: #b0bfcc; text-align: center; margin-top: 4px; }
+.footer { font-size: 11px; color: var(--footer); text-align: center; margin-top: 4px; }
 
 /* ── SVG ICON HELPER ── */
 .icon { display: inline-block; vertical-align: middle; }
+
+/* ── ACCESSIBILITY ── */
+@media (prefers-reduced-motion: reduce) {
+  .archive-item { transition: none; }
+}
