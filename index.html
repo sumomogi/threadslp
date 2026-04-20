@@ -22,20 +22,33 @@
   }
   .profile-avatar {
     flex-shrink: 0; width: 52px; height: 52px;
-    background: var(--navy); border-radius: 50%;
+    background: var(--accent); border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -1px;
   }
-  .profile-handle { font-size: 13px; font-weight: 700; color: #111; margin-bottom: 4px; }
+  .profile-handle { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .profile-bio    { font-size: 12px; color: var(--muted); line-height: 1.6; }
   .profile-work-link {
     margin-left: auto; flex-shrink: 0;
-    font-size: 11px; font-weight: 600; color: var(--navy);
-    text-decoration: none; background: var(--navy-light);
+    font-size: 11px; font-weight: 600; color: var(--accent);
+    text-decoration: none; background: rgba(0,113,227,0.08);
     padding: 7px 13px; border-radius: 20px; white-space: nowrap;
   }
 
-  .archive-group { background: var(--card); border-radius: 20px; padding: 28px 24px; }
+  .archive-group { padding: 4px 0 0; }
+  .archive-group .section-label { padding: 0 4px; }
+
+  .archive-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 4px 20px 12px;
+    scrollbar-width: none;
+  }
+  .archive-scroll::-webkit-scrollbar { display: none; }
 
   .work-banner {
     background: var(--navy); color: #fff;
@@ -69,44 +82,142 @@
   <!-- ARCHIVE GROUP: AI & 워크플로우 -->
   <div class="archive-group">
     <div class="section-label">AI &amp; 워크플로우</div>
+    <div class="archive-scroll">
 
-    <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DXHWsZclr2y" target="_blank" rel="noopener">
-      <div>
-        <div><span class="tag topic">토픽</span></div>
-        <div class="archive-title">Claude CLI + Obsidian 레버리지</div>
-        <div class="archive-meta">조회수 3.9K · 리포스트 18</div>
-      </div>
-      <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-      </svg>
-    </a>
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DXHWsZclr2y" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">Claude CLI + Obsidian 레버리지</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 3.9K · 리포스트 18</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
 
-    <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DW-1cAuDZnG" target="_blank" rel="noopener">
-      <div>
-        <div><span class="tag topic">토픽</span></div>
-        <div class="archive-title">일반 직장인의 업무 자동화 — Terminal AI</div>
-        <div class="archive-meta">조회수 297 · 좋아요 6</div>
-      </div>
-      <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-      </svg>
-    </a>
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DW-1cAuDZnG" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">일반 직장인의 업무 자동화 — Terminal AI</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 297 · 좋아요 6</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DWn1Uc4Ecjq" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">직장인의 진짜 업무 비서 — Claude Terminal, 로컬 폴더가 기반</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 1.4K · 좋아요 7</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DWDie2Bmrzg" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">링크 30개 일일이 붙여넣기? Claude Terminal로 링크트리 자동화</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 659 · 좋아요 7</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DV-lQvZGg8n" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">사진 1,670장 정리 — 파일명·폴더·변환·Alt텍스트 명령 하나로</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 6.3K · 좋아요 85</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DV-OTPEmrbp" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">비개발 직장인이 Terminal AI에 업무를 맡겨봤다 — 진짜 비서 같음</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 12.9K · 좋아요 114</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
   </div>
 
   <!-- ARCHIVE GROUP: AI & 디자인 -->
   <div class="archive-group">
     <div class="section-label">AI &amp; 디자인</div>
+    <div class="archive-scroll">
 
-    <a class="archive-item" href="post-font-color-whitespace.html">
-      <div>
-        <div><span class="tag topic">토픽</span></div>
-        <div class="archive-title">AI 결과물이 "싸 보이는" 이유 — 폰트·색·여백 3가지</div>
-        <div class="archive-meta">AI &amp; 디자인</div>
-      </div>
-      <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-      </svg>
-    </a>
+      <a class="archive-item" href="post-font-color-whitespace.html">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">AI 결과물이 "싸 보이는" 이유 — 폰트·색·여백 3가지</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">AI &amp; 디자인</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DXWCH_igNQW" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">AI 랜딩페이지가 엉성해 보이는 이유 딱 3가지</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 150 · 좋아요 6</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ARCHIVE GROUP: 콘텐츠 & 전략 -->
+  <div class="archive-group">
+    <div class="section-label">콘텐츠 &amp; 전략</div>
+    <div class="archive-scroll">
+
+      <a class="archive-item" href="https://www.threads.com/@ceetokyolee/post/DWc5XI9CMxT" target="_blank" rel="noopener">
+        <div class="archive-top">
+          <span class="tag topic">토픽</span>
+          <div class="archive-title">글 잘 터지는 스레더들 공통점 — 감으로 하지 않음</div>
+        </div>
+        <div class="archive-bottom">
+          <div class="archive-meta">조회수 5.1K · 좋아요 42</div>
+          <svg class="archive-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
   </div>
 
   <!-- WORK BANNER -->
