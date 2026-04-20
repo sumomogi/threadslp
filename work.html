@@ -52,6 +52,29 @@
     padding: 13px 28px; border-radius: 10px; text-decoration: none;
   }
   .cta-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+  .portfolio-item {
+    background: var(--pill-bg); border-radius: 16px; padding: 24px 20px;
+    text-decoration: none; color: inherit; display: block;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .portfolio-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .portfolio-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .portfolio-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+  .portfolio-desc { font-size: 12.5px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .portfolio-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .portfolio-chip {
+    font-size: 11px; color: var(--muted);
+    background: rgba(0,0,0,0.05); padding: 4px 10px; border-radius: 6px;
+  }
+  .portfolio-link {
+    font-size: 12px; font-weight: 600; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 4px;
+  }
 </style>
 </head>
 <body>
@@ -96,6 +119,28 @@
         <span class="tag-pill">개발 및 배포</span>
       </div>
     </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="work-card">
+    <div class="section-label">Portfolio</div>
+
+    <a class="portfolio-item" href="portfolio-lp-gym.html" target="_blank" rel="noopener">
+      <div class="portfolio-eyebrow">검색광고 LP · 퍼스널 트레이닝 짐</div>
+      <div class="portfolio-title">Apple 감성 모바일 랜딩페이지</div>
+      <div class="portfolio-desc">
+        검색광고 유입 전용 LP. 스크롤 애니메이션, 스티키 CTA, 횡스크롤 갤러리, 컨텍스트 어웨어 메시지 전환까지 구현.
+        모바일 퍼스트, 전환 최적화 구조.
+      </div>
+      <div class="portfolio-chips">
+        <span class="portfolio-chip">HTML / CSS</span>
+        <span class="portfolio-chip">모바일 퍼스트</span>
+        <span class="portfolio-chip">검색광고 전용</span>
+        <span class="portfolio-chip">Scroll Animation</span>
+        <span class="portfolio-chip">Sticky CTA</span>
+      </div>
+      <span class="portfolio-link">페이지 보기 →</span>
+    </a>
   </div>
 
   <!-- HOW IT WORKS -->
