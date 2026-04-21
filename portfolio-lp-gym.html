@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>検索広告LP制作実績 ｜ ポートフォリオ</title>
-<meta name="description" content="検索広告用ランディングページ制作実績。Appleデザイン美学を採用したモバイルファーストLP。">
-<link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
-<style>*{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}</style>
-<script>document.addEventListener('contextmenu',function(e){e.preventDefault()});document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&(e.key==='c'||e.key==='a'||e.key==='u')){e.preventDefault()}});</script>
+<!-- ========================================
+     PORTFOLIO CASE STUDY — Google Search Ad LP (anonymized)
+     DESIGN: Full Apple aesthetic — cinematic, minimal, scroll-driven
+     WordPress HEAD:
+     <title>LUMEN Premier Studio — Tokyo Flagship｜パーソナルトレーニング</title>
+     <meta name="description" content="最寄り駅徒歩2分。完全マンツーマンのパーソナルジム。期間限定無料体験受付中。">
+     <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
+======================================== -->
+
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard-jp/dist/web/variable/pretendardvariable-jp.css">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<!-- 非同期フォント読み込み — render-blocking 回避 -->
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard-jp/dist/web/variable/pretendardvariable-jp.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard-jp/dist/web/variable/pretendardvariable-jp.css"></noscript>
 
 <style>
 /* ── Elementor Reset ── */
@@ -104,6 +105,37 @@
   width:100%;height:320px;object-fit:cover;object-position:center 20%;
   display:block;
 }
+/* v4.1: trust badges — ad headline mirroring */
+.ap-hero-badges{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;
+}
+.ap-hero-badge{
+  font-size:11px;font-weight:600;color:#1d1d1f;
+  background:rgba(255,255,255,0.92);
+  border:1px solid rgba(0,0,0,0.08);
+  padding:5px 11px;border-radius:100px;
+  letter-spacing:-0.01em;white-space:nowrap;
+}
+.ap-hero-badge.--accent{
+  background:var(--brand);color:#fff;border-color:transparent;
+}
+/* v4.1: hero campaign strip — 0円 first-view anchor */
+.ap-hero-campaign{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,90,95,0.08);
+  border:1px solid rgba(255,90,95,0.18);
+  padding:6px 12px;border-radius:100px;
+  font-size:12px;font-weight:600;color:var(--brand-dark);
+  margin-bottom:14px;letter-spacing:-0.01em;
+}
+.ap-hero-campaign-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--brand);
+  animation:ap-pulse 1.8s ease-in-out infinite;
+}
+@keyframes ap-pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.3)}
+}
 
 /* ========================================
    SECTION — Apple spacing
@@ -119,9 +151,9 @@
 /* ========================================
    TYPOGRAPHY — Apple scale
 ======================================== */
-.ap-headline-l{font-size:40px;font-weight:700;line-height:1.05;letter-spacing:-0.04em;margin-bottom:8px}
-.ap-headline{font-size:28px;font-weight:600;line-height:1.14;letter-spacing:-0.03em;margin-bottom:6px}
-.ap-headline-s{font-size:21px;font-weight:600;line-height:1.19;letter-spacing:-0.02em;margin-bottom:6px}
+.ap-headline-l{font-size:40px;font-weight:800;line-height:1.05;letter-spacing:-0.04em;margin-bottom:8px}
+.ap-headline{font-size:28px;font-weight:700;line-height:1.14;letter-spacing:-0.03em;margin-bottom:6px}
+.ap-headline-s{font-size:21px;font-weight:700;line-height:1.19;letter-spacing:-0.02em;margin-bottom:6px}
 .ap-body-text{font-size:17px;font-weight:400;line-height:1.47;letter-spacing:-0.022em;color:var(--gray-text)}
 .ap-caption{font-size:12px;font-weight:400;color:var(--gray-light);letter-spacing:-0.01em}
 .ap-eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:-0.01em;margin-bottom:6px}
@@ -206,6 +238,112 @@
 .ap-feature-desc{font-size:14px;color:var(--gray-text);line-height:1.5}
 
 /* ========================================
+   INTENT SEGMENTS — matches TRAINER card language
+======================================== */
+.ap-segments{display:flex;flex-direction:column;gap:16px}
+.ap-segment{
+  background:#fff;
+  border-radius:20px;padding:32px 24px;
+  box-shadow:0 2px 20px rgba(0,0,0,0.04);
+  overflow:hidden;
+}
+.ap-segment-img{
+  width:calc(100% + 48px) !important;
+  max-width:calc(100% + 48px) !important;
+  margin:-32px -24px 20px !important;
+  height:260px;
+  object-fit:cover;
+  object-position:center 8%;
+  display:block;
+}
+.ap-segment .ap-eyebrow{margin-bottom:10px}
+.ap-segment-title{
+  font-size:21px;font-weight:600;
+  color:#1d1d1f;line-height:1.3;
+  letter-spacing:-0.02em;
+  word-break:keep-all;
+  margin-bottom:16px;
+}
+.ap-segment-lead{
+  font-size:14px;line-height:1.7;color:var(--gray-text);
+  margin-bottom:22px;
+}
+.ap-segment-points{
+  list-style:none;padding:0;margin:0 0 24px;
+}
+.ap-segment-points li{
+  font-size:13px;line-height:1.9;color:#1d1d1f;
+  padding-left:16px;position:relative;
+}
+.ap-segment-points li::before{
+  content:'';position:absolute;left:0;top:13px;
+  width:5px;height:5px;border-radius:50%;background:var(--gray-light);
+}
+.ap-segment-quote{
+  background:var(--gray-100);
+  border-radius:14px;padding:16px 18px;
+}
+.ap-segment-quote-text{
+  font-size:14px;line-height:1.65;color:#1d1d1f;
+  margin-bottom:8px;
+}
+.ap-segment-quote-src{
+  font-size:11px;color:var(--gray-light);
+}
+
+/* ========================================
+   BEFORE/AFTER — stat cards
+======================================== */
+.ap-ba-grid{display:flex;flex-direction:column;gap:12px}
+.ap-ba-card{
+  background:#fff;border-radius:20px;padding:28px 24px;
+  box-shadow:0 2px 20px rgba(0,0,0,0.04);
+}
+.ap-ba-card.--accent{
+  border:1.5px solid var(--brand);
+}
+.ap-ba-card.--accent .ap-ba-tag{
+  display:inline-block;font-size:10px;font-weight:700;
+  letter-spacing:0.08em;color:var(--brand);
+  background:rgba(255,90,95,0.08);
+  padding:3px 10px;border-radius:6px;margin-bottom:14px;
+}
+.ap-ba-num{
+  font-size:32px;font-weight:700;color:#1d1d1f;
+  letter-spacing:-0.03em;line-height:1.1;margin-bottom:4px;
+  word-break:keep-all;
+}
+.ap-ba-sub{
+  font-size:12px;color:var(--gray-light);
+  font-weight:500;margin-bottom:14px;
+}
+.ap-ba-note{
+  font-size:14px;line-height:1.6;color:#1d1d1f;
+  margin-bottom:10px;
+}
+.ap-ba-meta{
+  font-size:11px;color:var(--gray-light);
+  letter-spacing:-0.01em;line-height:1.5;
+}
+
+/* ========================================
+   PROGRAMS — 対応可能なプログラム (tag cloud)
+======================================== */
+.ap-programs{
+  display:flex;flex-wrap:wrap;gap:8px;
+}
+.ap-program-tag{
+  font-size:13px;font-weight:500;color:#1d1d1f;
+  background:var(--gray-bg);
+  padding:9px 16px;border-radius:100px;
+  letter-spacing:-0.01em;white-space:nowrap;
+}
+.ap-program-tag.--highlight{
+  background:rgba(255,90,95,0.08);
+  color:var(--brand-dark);font-weight:600;
+}
+
+/* ========================================
    PRICING — glass cards
 ======================================== */
 .ap-price-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -276,7 +414,7 @@
 
 /* Full-width button — 最終CTA用 */
 .ap-btn{
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;gap:6px;
   width:100%;max-width:360px;margin:0 auto;
   padding:16px 24px;border-radius:14px;
   font-size:17px;font-weight:500;text-decoration:none;
@@ -284,6 +422,17 @@
 }
 .ap-btn.--fill{background:var(--accent);color:#fff}
 .ap-btn.--fill:hover{background:var(--accent-hover);transform:scale(1.01)}
+
+/* External link icon — 外部サイト遷移表示 */
+.ap-ext-icon{
+  width:11px;height:11px;
+  flex-shrink:0;opacity:0.85;
+}
+.ap-ext-note{
+  display:block;margin-top:10px;
+  font-size:11px;color:var(--gray-light);
+  letter-spacing:-0.01em;line-height:1.5;
+}
 
 /* v4: inline blue button (Hero/mid CTA用) */
 .ap-btn-inline{
@@ -321,7 +470,24 @@
 .ap-footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
 .ap-footer-links a{color:var(--gray-text);font-size:12px}
 .ap-footer-links a:hover{text-decoration:underline}
-.ap-footer-copy{border-top:1px solid var(--gray-border);padding-top:12px;font-size:11px}
+.ap-footer-social{
+  display:flex;gap:10px;margin-bottom:14px;
+}
+.ap-sns{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity 0.2s,transform 0.2s;
+}
+.ap-sns:hover{opacity:0.85;transform:scale(1.05)}
+.ap-sns svg{width:18px;height:18px;display:block}
+.ap-sns--line{background:#06C755;color:#fff}
+.ap-sns--ig{
+  background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color:#fff;
+}
+.ap-footer-copy{border-top:1px solid var(--gray-border);padding-top:12px;font-size:11px;line-height:1.7}
+.ap-footer-copy p{margin-bottom:2px}
+.ap-footer-copy p:last-child{margin-top:6px;margin-bottom:0}
 
 /* ── Responsive ── */
 @media(min-width:481px){
@@ -334,35 +500,54 @@
      HTML
 ======================================== -->
 <!-- ★ Nav/Sticky は JS で body 末尾に動的注入する ★ -->
+<!-- ========================================
+     PORTFOLIO DISCLAIMER BANNER — remove if not needed
+======================================== -->
+<div id="pf-banner" style="position:sticky;top:0;left:0;right:0;z-index:999999;background:#1d1d1f;color:#f5f5f7;padding:10px 16px;text-align:center;font-size:12px;font-family:-apple-system,sans-serif;letter-spacing:-0.01em;line-height:1.5;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <strong>📁 PORTFOLIO CASE STUDY</strong>　
+  <span style="opacity:0.75;">Client name, images, data anonymized. Faces blurred. For recruitment reference only.</span>
+</div>
+
 <div class="ap-wrap">
 <div class="ap-body">
 
 <!-- ========================================
      HERO
 ======================================== -->
-<!-- HERO — v4: text first, image below, light bg -->
+<!-- HERO — v4.1: ad-message match, 0円 first-view, trust badges -->
 <section class="ap-hero">
   <div class="ap-hero-text">
-    <p class="ap-eyebrow">都内駅近 ／ 完全マンツーマン</p>
-    <h1>続けた先に、<br>体は<em>応える。</em></h1>
+    <div class="ap-hero-campaign">
+      <span class="ap-hero-campaign-dot"></span>
+      期間限定 ／ 最大 ¥XX,XXX 相当が無料
+    </div>
+    <p class="ap-eyebrow">東京都心エリアのパーソナルジム ／ 最寄り駅徒歩2分</p>
+    <h1>体験料も初月会費も、<br><em>0円</em>で始める。</h1>
     <p class="ap-hero-sub">
-      都内のパーソナルトレーニングジム。<br>
-      あなたの体調に合わせて、毎回プログラムを組みます。
+      東京都心エリアの完全マンツーマン。<br>
+      腰痛・姿勢・体力低下、あなたの悩みから始めます。
     </p>
+    <div class="ap-hero-badges">
+      <span class="ap-hero-badge">創業55年</span>
+      <span class="ap-hero-badge">Google ★X.X</span>
+      <span class="ap-hero-badge --accent">入会金 0円</span>
+    </div>
     <div class="ap-hero-cta-row">
-      <a href="#"
+      <a href="#reserve"
          target="_blank" rel="noopener" class="ap-btn-inline">
         無料体験を予約する
+        <svg class="ap-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
       </a>
       <a href="#ap-price" class="ap-link --secondary">
         料金を見る <span class="arr">›</span>
       </a>
     </div>
-    <p class="ap-tel-sub"></p>
+    <p class="ap-ext-note">LUMEN Premier公式予約ページへ移動します</p>
+    <p class="ap-tel-sub">電話でも予約できます: <a href="tel:03XXXXXXXX">03-XXXX-XXXX</a></p>
   </div>
   <div class="ap-hero-img-wrap">
-    <img src="images/hero.jpg"
-         alt="パーソナルトレーニングジム" fetchpriority="high" decoding="async">
+    <img src="images/hero.webp"
+         alt="東京都心エリアのLUMEN Premier Studio Tokyo Flagship ／ 完全マンツーマンパーソナルジム" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -372,15 +557,15 @@
 <section class="ap-section --white" style="padding-top:56px;padding-bottom:56px;">
   <div class="ap-stats ap-reveal">
     <div class="ap-stat">
-      <p class="ap-stat-num">2<small>分</small></p>
-      <p class="ap-stat-label">最寄り駅から</p>
+      <p class="ap-stat-num">55<small>年</small></p>
+      <p class="ap-stat-label">創業実績</p>
     </div>
     <div class="ap-stat">
       <p class="ap-stat-num">5.0</p>
       <p class="ap-stat-label">Google 評価</p>
     </div>
     <div class="ap-stat">
-      <p class="ap-stat-num">7,500<small>円〜</small></p>
+      <p class="ap-stat-num">XX,XXX<small>円〜</small></p>
       <p class="ap-stat-label">1回あたり</p>
     </div>
   </div>
@@ -390,23 +575,25 @@
      CAMPAIGN — 0円
 ======================================== -->
 <section class="ap-section --light ap-reveal" style="text-align:center;">
-  <p class="ap-eyebrow">キャンペーン実施中</p>
-  <p class="ap-headline-l">
-    体験料も、初月会費も。
+  <p class="ap-eyebrow">期間限定限定</p>
+  <p class="ap-headline-l" style="word-break:keep-all;">
+    体験料も、<br>初月会費も。
   </p>
   <p style="font-size:80px;font-weight:700;color:#1d1d1f;line-height:1;letter-spacing:-0.05em;margin:16px 0;">
     0<span style="font-size:28px;font-weight:500;color:var(--gray-light);">円</span>
   </p>
   <p class="ap-body-text" style="max-width:300px;margin:0 auto;">
-    体験料（通常¥5,000）と月会費1ヶ月分。<br>
-    最大¥35,000相当が無料。
+    体験料（通常¥X,XXX）と月会費1ヶ月分。<br>
+    最大¥XX,XXX相当が無料。
   </p>
   <div style="margin-top:32px;">
-    <a href="#"
+    <a href="#reserve"
        target="_blank" rel="noopener" class="ap-btn-inline" style="font-size:17px;padding:14px 36px;">
       無料体験を予約する
+      <svg class="ap-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
     </a>
-    <p class="ap-tel-sub">電話: <a href="#">—</a></p>
+    <p class="ap-ext-note">LUMEN Premier公式予約ページへ移動します</p>
+    <p class="ap-tel-sub">電話: <a href="tel:03XXXXXXXX">03-XXXX-XXXX</a></p>
   </div>
 </section>
 
@@ -415,8 +602,8 @@
 ======================================== -->
 <section class="ap-section --flush ap-reveal">
   <div class="ap-photo">
-    <img src="images/siteimage.jpg"
-         alt="マンツーマン指導" loading="lazy"
+    <img src="images/photo-training.webp"
+         alt="東京都心Tokyo Flagshipのパーソナルジム マンツーマン指導風景" loading="lazy"
          style="height:360px;object-fit:cover;object-position:center 30%;">
   </div>
 </section>
@@ -426,12 +613,12 @@
 ======================================== -->
 <section class="ap-section --white ap-reveal">
   <p class="ap-eyebrow">パーソナルトレーニング</p>
-  <h2 class="ap-headline-l" style="margin-bottom:16px;">
-    あなたの体調から<br>始まる50分。
+  <h2 class="ap-headline-l" style="margin-bottom:16px;word-break:keep-all;">
+    その日の体に、<br>その日のメニュー。
   </h2>
   <p class="ap-body-text" style="margin-bottom:48px;">
     決まったメニューはありません。<br>
-    毎回、今日の体に合わせてプログラムを組みます。
+    毎回、今日の体調を見てプログラムを組みます。
   </p>
 
   <div class="ap-features">
@@ -466,25 +653,120 @@
 </section>
 
 <!-- ========================================
-     VOICE — 1 card, universal
+     INTENT SEGMENTS — 腰痛 / シニア / 短期
+     検索クエリTop3インテント（腰痛58+・高齢者36+・短期）に対応
 ======================================== -->
-<section class="ap-section ap-reveal" style="padding-top:0;">
-  <div style="background:var(--gray-bg);border-radius:20px;padding:32px 24px;">
-    <p style="font-size:21px;font-weight:600;color:#1d1d1f;line-height:1.4;letter-spacing:-0.02em;margin-bottom:16px;">
-      「運動は何度も挫折してきました。<br>
-      ここでは、3ヶ月続きました。<br>
-      <span style="color:var(--brand);">それだけで十分でした。</span>」
-    </p>
-    <p style="font-size:13px;color:var(--gray-text);line-height:1.7;margin-bottom:16px;">
-      始める前は「自分には無理かも」と思っていましたが、トレーナーさんが毎回丁寧に向き合ってくれるので、気がついたら続いていました。続いていること自体が、私には一番うれしいです。
-    </p>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#F4A7B9,#FF5A5F);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0;">A</div>
-      <div>
-        <p style="font-size:13px;font-weight:600;color:#1d1d1f;">40代 女性 ／ 月4回プラン</p>
-        <p style="font-size:11px;color:var(--gray-light);">体験者インタビューより</p>
+<section class="ap-section --light ap-reveal" id="ap-segments">
+  <p class="ap-eyebrow">あなたの目的に合わせて</p>
+  <h2 class="ap-headline-l" style="margin-bottom:16px;word-break:keep-all;">
+    悩みから<br>始める。
+  </h2>
+  <p class="ap-body-text" style="margin-bottom:40px;">
+    一人ひとり違う悩みに、個別のアプローチで。
+  </p>
+
+  <div class="ap-segments">
+    <!-- SEGMENT 1: 腰痛・姿勢 — Trainer A実担当（53歳女性） -->
+    <div class="ap-segment">
+      <img class="ap-segment-img"
+           src="images/case-01.webp"
+           alt="東京都心最寄り駅エリアのパーソナルジム 姿勢改善トレーニング" loading="lazy">
+      <p class="ap-eyebrow">Case 01</p>
+      <h3 class="ap-segment-title">腰痛・肩こり・<br>姿勢が気になる方へ</h3>
+      <p class="ap-segment-lead">
+        朝の腰の痛み、立ち上がりの重さ、慢性的な肩こり。Trainer Aがレジスタンストレーニングとストレッチで、再発しない体づくりを組み立てます。
+      </p>
+      <ul class="ap-segment-points">
+        <li>初回に姿勢・動作・可動域をチェック</li>
+        <li>レジスタンストレーニングで弱った筋肉を強化</li>
+        <li>ストレッチで柔軟性を取り戻し、再発を予防</li>
+      </ul>
+      <div class="ap-segment-quote">
+        <p class="ap-segment-quote-text">「毎朝、腰が痛くて起き上がれなかったのに、いつの間にか普通に動けるようになっていました。」</p>
+        <p class="ap-segment-quote-src">50代 女性 ／ Trainer A 担当</p>
       </div>
     </div>
+
+    <!-- SEGMENT 2: 50代以上 — グループ実例（88歳女性・1万歩） -->
+    <div class="ap-segment">
+      <p class="ap-eyebrow">Case 02</p>
+      <h3 class="ap-segment-title">50代以上で<br>運動を始めたい方へ</h3>
+      <p class="ap-segment-lead">
+        膝や腰への負担が気になって、ジムを避けてきた方へ。加圧トレーニングなら、どなたでも短時間で。介護予防運動指導員が、無理なく続けられるプログラムを組みます。
+      </p>
+      <ul class="ap-segment-points">
+        <li>加圧トレーニングで誰でもできる簡単な運動から</li>
+        <li>血流改善で肩こり・腰痛・疲労感にもアプローチ</li>
+        <li>介護予防運動指導員の資格を持つトレーナーが担当</li>
+      </ul>
+      <div class="ap-segment-quote">
+        <p class="ap-segment-quote-text">「短距離で疲れていた散歩が、長距離歩いても平気に。次は旅行に行きます。」</p>
+        <p class="ap-segment-quote-src">シニア女性 ／ LUMEN Premier Studio会員</p>
+      </div>
+    </div>
+
+    <!-- SEGMENT 3: Short-term intensive — group case example -->
+    <div class="ap-segment">
+      <p class="ap-eyebrow">Case 03</p>
+      <h3 class="ap-segment-title">短期集中で<br>結果を出したい方へ</h3>
+      <p class="ap-segment-lead">
+        数ヶ月先の目標、イベントまでの期間、数値目標のある方へ。加圧トレーニングで週2回の効率重視プログラム。食事管理と組み合わせて短期間で結果を。
+      </p>
+      <ul class="ap-segment-points">
+        <li>加圧トレーニングで短時間・週2回の効率設計</li>
+        <li>目標から逆算した食事管理アドバイス</li>
+        <li>体組成の変化を数値で可視化</li>
+      </ul>
+      <div class="ap-segment-quote">
+        <p class="ap-segment-quote-text">「自己流で週5日通っても落ちなかった体重が、週XX回に減らしたら短期間で大幅に落ちて。服、全部ブカブカで買い直しです。」</p>
+        <p class="ap-segment-quote-src">40代 男性 ／ 会員</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="#reserve"
+       target="_blank" rel="noopener" class="ap-btn-inline">
+      まずは無料体験で相談する
+      <svg class="ap-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+    <p class="ap-ext-note">LUMEN Premier公式予約ページへ移動します</p>
+  </div>
+</section>
+
+<!-- ========================================
+     PROGRAMS — 対応可能なプログラム
+======================================== -->
+<section class="ap-section --white ap-reveal">
+  <p class="ap-eyebrow">対応可能なプログラム</p>
+  <h2 class="ap-headline" style="margin-bottom:16px;word-break:keep-all;">
+    こんなご相談も、<br>お気軽に。
+  </h2>
+  <p class="ap-body-text" style="margin-bottom:28px;">
+    Trainers A & Bトレーナーは、下記のようなご要望にも対応しています。気になるテーマがあれば、体験のときに気軽にお聞かせください。
+  </p>
+
+  <div class="ap-programs">
+    <span class="ap-program-tag">腰痛・姿勢改善</span>
+    <span class="ap-program-tag">シニアトレーニング</span>
+    <span class="ap-program-tag">ダイエット</span>
+    <span class="ap-program-tag">ボディメイク</span>
+    <span class="ap-program-tag --highlight">太りたい方向け</span>
+    <span class="ap-program-tag --highlight">デコルテ引き締め</span>
+    <span class="ap-program-tag --highlight">ヒップアップ</span>
+    <span class="ap-program-tag">ゴルフパフォーマンス</span>
+    <span class="ap-program-tag">可動域改善</span>
+    <span class="ap-program-tag">加圧トレーニング</span>
+    <span class="ap-program-tag">筋力トレーニング</span>
+    <span class="ap-program-tag">心拍トレーニング</span>
+  </div>
+
+  <div style="margin-top:28px;">
+    <a href="#reserve"
+       target="_blank" rel="noopener" class="ap-link --primary">
+      まずは無料体験で相談する <span class="arr">›</span>
+    </a>
   </div>
 </section>
 
@@ -496,22 +778,22 @@
 
   <div class="ap-gallery">
     <div class="ap-gallery-item">
-      <img src="images/k-photo1.jpg" alt="トレーニングスペース" loading="lazy">
+      <img src="images/gallery-1.webp" alt="東京都心最寄り駅エリアのパーソナルジム トレーニングスペース" loading="lazy">
     </div>
     <div class="ap-gallery-item">
-      <img src="images/k-photo2.jpg" alt="マシンエリア" loading="lazy">
+      <img src="images/gallery-2.webp" alt="東京都心最寄り駅エリアのパーソナルジム マシンエリア" loading="lazy">
     </div>
     <div class="ap-gallery-item">
-      <img src="images/k-photo3.jpg" alt="フリーウェイト" loading="lazy">
+      <img src="images/gallery-3.webp" alt="東京都心最寄り駅エリアのパーソナルジム フリーウェイトエリア" loading="lazy">
     </div>
     <div class="ap-gallery-item">
-      <img src="images/k-photo4.jpg" alt="ストレッチエリア" loading="lazy">
+      <img src="images/gallery-4.webp" alt="東京都心最寄り駅エリアのパーソナルジム ストレッチエリア" loading="lazy">
     </div>
     <div class="ap-gallery-item">
-      <img src="images/k-photo5.jpg" alt="受付・ラウンジ" loading="lazy">
+      <img src="images/gallery-5.webp" alt="東京都心最寄り駅エリアのパーソナルジム 受付・ラウンジ" loading="lazy">
     </div>
     <div class="ap-gallery-item">
-      <img src="images/k-photo7.jpg" alt="施設内観" loading="lazy">
+      <img src="images/gallery-6.webp" alt="東京都心最寄り駅エリアのパーソナルジム 施設内観" loading="lazy">
     </div>
   </div>
   <p class="ap-gallery-caption">← スワイプで施設内をご覧いただけます</p>
@@ -520,24 +802,27 @@
 <!-- ========================================
      TRAINER — profile card
 ======================================== -->
-<section class="ap-section --light ap-reveal">
+<section class="ap-section --light ap-reveal" id="ap-trainer">
   <p class="ap-eyebrow">トレーナー</p>
   <h2 class="ap-headline" style="margin-bottom:12px;">
     挫折させないのが、<br>私たちの仕事です。
   </h2>
-  <p class="ap-body-text" style="margin-bottom:32px;">
+  <p class="ap-body-text" style="margin-bottom:8px;">
     会員アンケートで最も多かった紹介フレーズ：<br>
     「最後までサポートしてくれる場所」
+  </p>
+  <p class="ap-caption" style="margin-bottom:32px;">
+    1970年Original Flagship創業のLUMEN Group ／ 東京都心エリアでは2号店目。
   </p>
 
   <!-- Trainer Profile Card -->
   <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.06);">
-    <img src="images/staff.jpg"
-         alt="パーソナルトレーナー 担当トレーナー" loading="lazy"
+    <img src="images/trainer-a.webp"
+         alt="パーソナルトレーナー Trainer A" loading="lazy"
          style="width:60%;max-width:200px;margin:24px auto 0;object-fit:contain;border-radius:50%;aspect-ratio:1/1;">
     <div style="padding:24px;">
       <p style="font-size:11px;color:var(--brand);font-weight:600;letter-spacing:0.06em;margin-bottom:4px;">PERSONAL TRAINER</p>
-      <p style="font-size:21px;font-weight:700;color:#1d1d1f;margin-bottom:12px;">担当トレーナー</p>
+      <p style="font-size:21px;font-weight:700;color:#1d1d1f;margin-bottom:12px;">Trainer A</p>
       <p style="font-size:15px;color:var(--gray-text);line-height:1.7;margin-bottom:20px;">
         「皆様の目的に対して、真摯に取り組みます。何をすればいいか分からなくても大丈夫です。まずはお話を聞かせてください。」
       </p>
@@ -549,20 +834,102 @@
     </div>
   </div>
 
-  <!-- 担当トレーナー 指導風景ギャラリー -->
+  <!-- Trainer A 指導風景ギャラリー -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:16px;">
-    <img src="images/trainer-session.jpg"
-         alt="トレーナー マンツーマン指導" loading="lazy"
+    <img src="images/trainer-a-session.webp"
+         alt="東京都心Tokyo Flagship Trainer Aのマンツーマン指導" loading="lazy"
          style="width:100%;height:140px;object-fit:cover;border-radius:12px;">
-    <img src="images/trainer-posture.jpg"
-         alt="トレーナー 姿勢改善指導" loading="lazy"
+    <img src="images/trainer-a-posture.webp"
+         alt="東京都心Tokyo Flagship Trainer Aの姿勢改善指導" loading="lazy"
          style="width:100%;height:140px;object-fit:cover;border-radius:12px;">
-    <img src="images/gym-atm1.jpg"
-         alt="トレーニング施設" loading="lazy"
+    <img src="images/trainer-a-gym-1.webp"
+         alt="東京都心最寄り駅エリアのパーソナルジム トレーニング施設" loading="lazy"
          style="width:100%;height:140px;object-fit:cover;border-radius:12px;">
-    <img src="images/gym-atm2.jpg"
-         alt="施設内の雰囲気" loading="lazy"
+    <img src="images/trainer-a-gym-2.webp"
+         alt="東京都心最寄り駅エリアのパーソナルジム 施設内の雰囲気" loading="lazy"
          style="width:100%;height:140px;object-fit:cover;border-radius:12px;">
+  </div>
+
+  <!-- Trainer Profile Card — Trainer B -->
+  <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.06);margin-top:24px;">
+    <img src="images/trainer-b.webp"
+         alt="パーソナルトレーナー Trainer B" loading="lazy"
+         style="width:60%;max-width:200px;margin:24px auto 0;object-fit:contain;border-radius:50%;aspect-ratio:1/1;">
+    <div style="padding:24px;">
+      <p style="font-size:11px;color:var(--brand);font-weight:600;letter-spacing:0.06em;margin-bottom:4px;">PERSONAL TRAINER</p>
+      <p style="font-size:21px;font-weight:700;color:#1d1d1f;margin-bottom:12px;">Trainer B</p>
+      <p style="font-size:15px;color:var(--gray-text);line-height:1.7;margin-bottom:20px;">
+        「無理することなく運動を継続し、健康寿命を一緒に伸ばしましょう！」
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-size:11px;color:var(--gray-text);background:var(--gray-bg);padding:4px 10px;border-radius:6px;">アメリカ公認アスレティックトレーナー</span>
+        <span style="font-size:11px;color:var(--gray-text);background:var(--gray-bg);padding:4px 10px;border-radius:6px;">TPI認定ゴルフフィットネスインストラクター</span>
+        <span style="font-size:11px;color:var(--gray-text);background:var(--gray-bg);padding:4px 10px;border-radius:6px;">ハンドボール・サーフィン・ボルダリング・ゴルフ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trainer B 指導風景 -->
+  <img src="images/trainer-b-session.webp"
+       alt="東京都心Tokyo Flagship Trainer Bの指導風景" loading="lazy"
+       style="width:100%;max-width:none;height:auto;border-radius:16px;margin-top:16px;display:block;">
+</section>
+
+<!-- ========================================
+     WOMEN-FRIENDLY SIGNAL — 女性会員の方へ
+======================================== -->
+<section class="ap-section --white ap-reveal">
+  <p class="ap-eyebrow">女性の方へ</p>
+  <h2 class="ap-headline" style="margin-bottom:16px;word-break:keep-all;">
+    女性会員が多い、<br>3つの理由。
+  </h2>
+  <p class="ap-body-text" style="margin-bottom:32px;">
+    現在、女性トレーナーは在籍していませんが、40〜60代の女性会員が多く通われています。完全マンツーマンなので、他の方を気にせず自分のペースで集中できます。
+  </p>
+
+  <img src="images/women-facility.webp"
+       alt="東京都心最寄り駅エリアのパーソナルジム 施設内観 ／ 女性会員も多数" loading="lazy"
+       style="width:100%;border-radius:16px;margin-bottom:40px;display:block;">
+
+  <div class="ap-features">
+    <div class="ap-feature">
+      <div class="ap-feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div>
+        <p class="ap-feature-title">女性会員も多数在籍</p>
+        <p class="ap-feature-desc">姿勢改善・体力づくりで40〜60代の女性も多く通われています。</p>
+      </div>
+    </div>
+    <div class="ap-feature">
+      <div class="ap-feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div>
+        <p class="ap-feature-title">完全マンツーマンで集中</p>
+        <p class="ap-feature-desc">担当トレーナーと1対1。他の利用者を気にせず自分のペースで。</p>
+      </div>
+    </div>
+    <div class="ap-feature">
+      <div class="ap-feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+      </div>
+      <div>
+        <p class="ap-feature-title">しつこい勧誘なし</p>
+        <p class="ap-feature-desc">体験後に入会を迫ることはありません。ご自身のペースでご判断ください。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -578,24 +945,24 @@
 
   <div class="ap-price-row">
     <div class="ap-price-card --accent">
-      <p class="ap-price-name">月4回</p>
-      <p class="ap-price-num">30,000<small>円</small></p>
-      <p class="ap-price-per">1回あたり 7,500円</p>
+      <p class="ap-price-name">フィットネス</p>
+      <p class="ap-price-num">XX,XXX<small>円</small></p>
+      <p class="ap-price-per">1回あたり XX,XXX円</p>
       <div class="ap-price-list">
-        ・パーソナル50分×4<br>
+        ・パーソナル60分×4枠/月<br>
         ・トレーナー指名無料<br>
-        ・3Dボディスキャン
+        ・家族会員 30%OFF
       </div>
     </div>
     <div class="ap-price-card">
-      <p class="ap-price-name">月8回</p>
-      <p class="ap-price-num">45,000<small>円</small></p>
-      <p class="ap-price-per">1回あたり 5,625円</p>
+      <p class="ap-price-name">プラチナ</p>
+      <p class="ap-price-num">XX,XXX<small>円</small></p>
+      <p class="ap-price-per">ゴルフ通い放題セット</p>
       <div class="ap-price-list">
-        ・パーソナル50分×8<br>
-        ・トレーナー指名無料<br>
-        ・3Dボディスキャン<br>
-        ・ストレッチ月1回
+        ・パーソナル60分×4枠<br>
+        ・ゴルフ50分×2 通い放題<br>
+        ・ゴルフレッスン無料<br>
+        ・家族会員 30%OFF
       </div>
     </div>
   </div>
@@ -608,26 +975,74 @@
 </section>
 
 <!-- ========================================
-     REVIEWS
+     BEFORE/AFTER — 会員事例・数字で見る変化
+======================================== -->
+<section class="ap-section --light ap-reveal">
+  <p class="ap-eyebrow">会員事例</p>
+  <h2 class="ap-headline-l" style="margin-bottom:16px;word-break:keep-all;">
+    数字で見る<br>変化。
+  </h2>
+  <p class="ap-body-text" style="margin-bottom:40px;">
+    LUMEN Premier Studio会員の実際の変化事例から。
+  </p>
+
+  <div class="ap-ba-grid">
+    <!-- Kasuga Trainer B担当 — アクセント -->
+    <div class="ap-ba-card --accent">
+      <span class="ap-ba-tag">Tokyo Flagship・Trainer B担当</span>
+      <p class="ap-ba-num">飛距離 +α</p>
+      <p class="ap-ba-sub">ゴルフスイング安定</p>
+      <p class="ap-ba-note">股関節・胸椎の可動域制限でキャスティングが出ていた方が、可動域改善トレーニングでスイングが安定し、飛距離も数ヤード上がりました。</p>
+      <p class="ap-ba-meta">60代 男性 ／ 可動域改善プログラム</p>
+    </div>
+
+    <!-- 体脂肪率 12→6% -->
+    <div class="ap-ba-card">
+      <p class="ap-ba-num">XX% → X%</p>
+      <p class="ap-ba-sub">体脂肪率</p>
+      <p class="ap-ba-note">元トレーナーで「自分ではどう絞ればいいか分からない」と来店。短期間で目標達成、腹筋も割れました。</p>
+      <p class="ap-ba-meta">40代 男性 ／ 短期プログラム ／ 筋力＋有酸素＋栄養管理</p>
+    </div>
+
+    <!-- 定期通院 → 不要 整体 -->
+    <div class="ap-ba-card">
+      <p class="ap-ba-num">定期通院 → 不要</p>
+      <p class="ap-ba-sub">整体通い</p>
+      <p class="ap-ba-note">猫背・肩こり・腰痛で毎週整体に通っていた方が、加圧トレーニングで姿勢が改善。以降、整体は一切不要に。</p>
+      <p class="ap-ba-meta">50代 女性 ／ 加圧トレーニング</p>
+    </div>
+
+    <!-- BA card: body composition improvement -->
+    <div class="ap-ba-card">
+      <p class="ap-ba-num">減量 ／ 体脂肪率改善</p>
+      <p class="ap-ba-sub">体重・体脂肪率</p>
+      <p class="ap-ba-note">運動時間が取れない方向けに、通勤時間のウォーキングで心拍管理。短期間で数値も体型も、肩こり腰痛まで改善。</p>
+      <p class="ap-ba-meta">50代 女性 ／ 短期プログラム ／ 心拍トレーニング</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     REVIEWS — 会員の声
 ======================================== -->
 <section class="ap-section --white ap-reveal">
-  <p class="ap-eyebrow">Google レビュー</p>
-  <h2 class="ap-headline" style="margin-bottom:32px;">★★★★★ <span style="font-weight:400;">5.0</span></h2>
+  <p class="ap-eyebrow">会員の声</p>
+  <h2 class="ap-headline" style="margin-bottom:32px;">実際の体験談</h2>
 
   <div class="ap-reviews">
     <div class="ap-review">
       <p class="ap-review-stars">★★★★★</p>
       <p class="ap-review-text">
-        ゆったりした空間が心地よいです。トレーナーさんも親切でした。
+        「腰椎ヘルニアで育児のたびに腰・膝が痛かったのが、加圧を4回受けた頃にはディズニーを1泊2日遊びつくしても腰が痛くならなくなりました。旅行用の着圧ストッキングも気づいたら使っていませんでした。」
       </p>
-      <p class="ap-review-src">Google レビュー</p>
+      <p class="ap-review-src">40代 女性 ／ 育児・腰痛・膝痛改善</p>
     </div>
     <div class="ap-review">
       <p class="ap-review-stars">★★★★★</p>
       <p class="ap-review-text">
-        スタッフも皆さん親切です。予約やキャンセルもスマホから簡単。体験してから入りましたが、あっさりとした対応でしつこい勧誘は一切なかったです。
+        「自己流で週5日ジムに通い当初の目標体重までは落ちたものの、そこから先が落ちずリバウンドもしていました。週XX日の加圧に変えただけで短期間で大幅減量、体脂肪率も目標達成に。服が全部ブカブカになり、買い直しです。」
       </p>
-      <p class="ap-review-src">Google レビュー</p>
+      <p class="ap-review-src">40代 男性 ／ 短期ダイエット</p>
     </div>
   </div>
 </section>
@@ -639,20 +1054,25 @@
   <p class="ap-eyebrow">アクセス</p>
   <h2 class="ap-headline" style="margin-bottom:24px;">最寄り駅から徒歩2分。</h2>
 
-  <img src="images/exterior.jpg"
-       alt="パーソナルトレーニングジム 外観" loading="lazy" style="border-radius:16px;margin-bottom:16px;">
+  <img src="images/exterior.webp"
+       alt="東京都心エリアのLUMEN Premier Studio Tokyo Flagship 外観 ／ 最寄り駅徒歩2分" loading="lazy" style="border-radius:16px;margin-bottom:16px;">
 
-  <div style="height:200px;background:var(--ap-gray-bg);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ap-gray-text);">地図 (非公開)</div>
+  <iframe src="about:blank#map-placeholder?pb=!1m18!1m12!1m3!1d3239.5819127164677!2d139.7497558779122!3d35.71190472828493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188dab62321385%3A0xff70556986c1d0e4!2zVEFD44OX44Os44Of44Ki44K444Og5pil5pel5b6M5qW95ZyS772c5a6k5YaF44K044Or44OV57e057-S5aC077yG44OR44O844K944OK44Or44OV44Kj44OD44OI44ON44K5!5e0!3m2!1sen!2sjp!4v1774922733375!5m2!1sen!2sjp"
+    width="100%" height="200" style="border:0;display:block;border-radius:16px;" title="LUMEN Premier Studio Tokyo Flagshipの地図" loading="lazy"></iframe>
 
   <div class="ap-access-info">
     <span class="ap-access-label">住所</span>
-    <span>東京都内</span>
+    <span>東京都○○区○○ (portfolio sample)</span>
     <span class="ap-access-label">最寄り</span>
-    <span>最寄り駅 徒歩2分</span>
+    <span>最寄り駅徒歩2分 ／ 隣接駅 徒歩4分</span>
+    <span class="ap-access-label">周辺駅</span>
+    <span>近隣2駅からも徒歩圏</span>
+    <span class="ap-access-label">周辺</span>
+    <span>都心ランドマーク至近 ／ 都心エリア隣接駅エリア徒歩圏 ／ 区行政施設</span>
     <span class="ap-access-label">営業</span>
     <span>平日 10:00–23:00 ／ 土 –21:00 ／ 日祝 –20:00</span>
     <span class="ap-access-label">電話</span>
-    <span><a href="#" style="color:var(--brand);">—</a></span>
+    <span><a href="tel:03XXXXXXXX" style="color:var(--brand);">03-XXXX-XXXX</a></span>
   </div>
 </section>
 
@@ -662,15 +1082,27 @@
 <section class="ap-section --white ap-reveal" style="padding-top:60px;">
   <details class="ap-faq">
     <summary>無料体験の内容は？</summary>
-    <p class="ap-faq-a">約60分。カウンセリング＋トレーニング体験。持ち物は動きやすい服装のみ。シューズはお貸しします。</p>
+    <p class="ap-faq-a">約60分。カウンセリング＋トレーニング体験。持ち物は動きやすい服装のみ。シューズ・タオルは無料でお貸しします。</p>
   </details>
   <details class="ap-faq">
     <summary>しつこい勧誘はありますか？</summary>
-    <p class="ap-faq-a">一切ありません。ご入会はご自身のペースでご判断ください。</p>
+    <p class="ap-faq-a">一切ありません。ご入会はご自身のペースでご判断ください。当日の入会も必須ではありません。</p>
   </details>
   <details class="ap-faq">
     <summary>月会費以外の費用は？</summary>
-    <p class="ap-faq-a">入会金0円。年間施設費（¥4,400）のみ。キャンペーン期間中は初年度無料。</p>
+    <p class="ap-faq-a">入会金0円。年会費・施設費など、月会費以外の追加費用はかかりません。</p>
+  </details>
+  <details class="ap-faq">
+    <summary>女性トレーナーはいますか？</summary>
+    <p class="ap-faq-a">現在、Tokyo Flagship Storeには女性トレーナーは在籍しておりません。ただし、40〜60代の女性会員も多くご利用いただいており、完全マンツーマンの個別対応で、周りを気にせずご自身のペースでトレーニングいただけます。</p>
+  </details>
+  <details class="ap-faq">
+    <summary>駐車場はありますか？</summary>
+    <p class="ap-faq-a">専用駐車場はございません。最寄りのコインパーキングをご利用ください。最寄り駅から徒歩2分のため、電車でのご来店が便利です。</p>
+  </details>
+  <details class="ap-faq">
+    <summary>契約期間・解約の縛りはありますか？</summary>
+    <p class="ap-faq-a">長期契約の縛りはございません。月単位でのご利用が可能です。詳細は体験時にご説明いたします。</p>
   </details>
 </section>
 
@@ -692,7 +1124,7 @@
     </a>
     <a href="#"
        style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--gray-border);font-size:15px;font-weight:500;color:#1d1d1f;">
-      店について
+      Tokyo Flagship Storeについて
       <span style="color:var(--gray-light);font-size:14px;">›</span>
     </a>
     <a href="#"
@@ -766,26 +1198,42 @@
      FINAL CTA
 ======================================== -->
 <!-- Final CTA — the one dark section as contrast -->
-<section class="ap-section --accent-bg ap-reveal" style="text-align:center;padding:100px 28px;">
-  <h2 class="ap-headline-l" style="color:#f5f5f7;margin-bottom:20px;">
-    まずは一度、<br>体験してみてください。
+<section class="ap-section --accent-bg ap-reveal" id="ap-final-cta" style="text-align:center;padding:100px 28px;">
+  <h2 class="ap-headline-l" style="color:#f5f5f7;margin-bottom:20px;word-break:keep-all;">
+    まずは、<br>無料体験から。
   </h2>
   <p class="ap-body-text" style="color:#86868b;margin-bottom:40px;">
     体験料0円。予約後のキャンセルも無料です。
   </p>
 
-  <a href="#"
+  <a href="#reserve"
      target="_blank" rel="noopener" class="ap-btn --fill">
     無料体験を予約する
+    <svg class="ap-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
   </a>
-  <a href="#" class="ap-btn --outline">
-    電話で予約する — —
+  <p class="ap-ext-note" style="text-align:center;">LUMEN Premier公式予約ページへ移動します</p>
+  <a href="tel:03XXXXXXXX" class="ap-btn --outline">
+    電話で予約する — 03-XXXX-XXXX
   </a>
   <p class="ap-caption" style="margin-top:12px;">受付 平日10:00–23:00 ／ 土10:00–21:00 ／ 日祝10:00–20:00</p>
 </section>
 
 <!-- FOOTER -->
 <footer class="ap-footer">
+  <div class="ap-footer-social">
+    <a href="#line" target="_blank" rel="noopener" class="ap-sns ap-sns--line" aria-label="LINE公式アカウント">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 10.3C24 4.9 18.6.6 12 .6S0 4.9 0 10.3c0 4.8 4.3 8.8 10 9.6.4.1.9.3 1.1.6.1.3.1.7 0 1l-.2 1c0 .3-.2 1.2 1 .7 1.3-.5 6.9-4.1 9.4-7C23.2 14.4 24 12.5 24 10.3zM7.3 13.4H4.9c-.3 0-.6-.3-.6-.6V8c0-.4.3-.6.6-.6.4 0 .7.3.7.6v4.1h1.8c.3 0 .6.3.6.6 0 .4-.3.7-.7.7zm2.4-.6c0 .3-.3.6-.6.6s-.6-.3-.6-.6V8c0-.4.3-.6.6-.6s.6.3.6.6v4.8zm5.7 0c0 .3-.2.5-.4.6-.1 0-.1 0-.2 0-.2 0-.4-.1-.5-.3l-2.4-3.3v2.9c0 .4-.3.6-.6.6s-.6-.3-.6-.6V8c0-.3.2-.5.4-.6.1 0 .1 0 .2 0 .2 0 .4.1.5.3l2.5 3.3V8c0-.3.3-.6.6-.6s.6.3.6.6v4.8zm3.9-3h-1.7v1.1h1.7c.3 0 .6.3.6.6s-.3.6-.6.6h-2.4c-.3 0-.6-.3-.6-.6V8c0-.3.3-.6.6-.6h2.4c.3 0 .6.3.6.6s-.3.6-.6.6h-1.7v1.1h1.7c.3 0 .6.3.6.6s-.3.5-.6.5z"/>
+      </svg>
+    </a>
+    <a href="#instagram" target="_blank" rel="noopener" class="ap-sns ap-sns--ig" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+  </div>
   <div class="ap-footer-links">
     <a href="#">店舗情報</a>
     <a href="#">料金</a>
@@ -793,8 +1241,11 @@
     <a href="#">コラム</a>
   </div>
   <div class="ap-footer-copy">
-    <p>パーソナルトレーニングジム ／ 東京都内</p>
-    <p>&copy; 2026 </p>
+    <p>LUMEN Premier Studio — Tokyo Flagship</p>
+    <p>東京都○○区○○</p>
+    <p>運営：株式会社 LUMEN SPORTS (仮名)（Founded 1970s）</p>
+    <p>1st Store ／ Established approx. 10 years ago<br>2nd Store ／ Recently opened (Tokyo Flagship)</p>
+    <p>&copy; 2026 株式会社 LUMEN SPORTS (仮名)</p>
   </div>
 </footer>
 
@@ -806,98 +1257,143 @@
 <!-- JS -->
 <script>
 (function(){
-  var BOOKING='#';
-  var TEL='#';
+  var BOOKING='#reserve';
+  var TEL='tel:03XXXXXXXX';
 
   /* ============================================================
-     1. NAV — body末尾にインラインstyleで動的生成
+     === IMMEDIATE（即実行）— 最小限のクリティカル処理のみ ===
      ============================================================ */
+
+  /* 0. VIEWPORT — standalone preview 시 태블릿처럼 보이는 현상 방지 */
+  if(!document.querySelector('meta[name="viewport"]')){
+    var vp=document.createElement('meta');
+    vp.name='viewport';
+    vp.content='width=device-width,initial-scale=1,viewport-fit=cover';
+    document.head.appendChild(vp);
+  }
+
+  /* 0a. IMAGE OPTIMIZATION — lazy画像に decoding=async + fetchpriority=low 付与
+        ヒーロー以外のネットワーク優先度を下げ、LCPリソースに帯域を回す */
+  var lazyImgs=document.querySelectorAll('img[loading="lazy"]');
+  for(var i=0;i<lazyImgs.length;i++){
+    if(!lazyImgs[i].hasAttribute('decoding'))lazyImgs[i].setAttribute('decoding','async');
+    if(!lazyImgs[i].hasAttribute('fetchpriority'))lazyImgs[i].setAttribute('fetchpriority','low');
+  }
+
+  /* 1. NAV — 画面上部のロゴ+CTA。ユーザーに即視認されるため即時生成 */
   var nav=document.createElement('nav');
   nav.id='ap-nav';
   nav.setAttribute('style','position:fixed;top:0;left:0;right:0;width:100%;max-width:480px;margin:0 auto;height:44px;z-index:100000;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(251,251,253,0.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.04);box-sizing:border-box;font-family:-apple-system,sans-serif;');
-  nav.innerHTML='<span style="font-size:13px;font-weight:600;color:#1d1d1f;">パーソナルジム</span>'
-    +'<a href="'+BOOKING+'" target="_blank" rel="noopener" style="font-size:11px;font-weight:600;color:#fff;background:#0071e3;padding:6px 14px;border-radius:100px;text-decoration:none;display:inline-block;">無料体験を予約</a>';
+  nav.innerHTML='<a href="#" style="display:inline-flex;align-items:center;text-decoration:none;"><img src="" alt="LUMEN Premier Studio" style="height:22px;width:auto;display:block;" decoding="async" fetchpriority="high"></a>'
+    +'<a href="'+BOOKING+'" target="_blank" rel="noopener" style="font-size:11px;font-weight:600;color:#fff;background:#0071e3;padding:6px 14px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">無料体験を予約<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:10px;height:10px;flex-shrink:0;opacity:0.85;" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>';
   document.body.appendChild(nav);
 
   /* ============================================================
-     2. STICKY CTA — body末尾にインラインstyleで動的生成
+     === DEFERRED（requestIdleCallback でアイドル時実行）
+         LCP/FCP 後の余裕時間に非クリティカル処理を逃がす
+         → TBT 大幅改善
      ============================================================ */
-  var sticky=document.createElement('div');
-  sticky.id='ap-sticky-injected';
-  sticky.setAttribute('style','position:fixed;bottom:0;left:0;right:0;width:100%;max-width:480px;margin:0 auto;background:rgba(251,251,253,0.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:0.5px solid rgba(0,0,0,0.06);padding:10px 20px;display:none;flex-direction:column;align-items:center;gap:3px;z-index:99999;box-sizing:border-box;font-family:-apple-system,sans-serif;');
-  sticky.innerHTML='<a href="'+BOOKING+'" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:100%;max-width:340px;background:#0071e3;color:#fff;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;text-decoration:none;box-sizing:border-box;">無料体験を予約する</a>'
-    +'<p id="ap-sticky-ctx" style="font-size:11px;font-weight:500;color:#6e6e73;text-align:center;min-height:16px;margin:0;">キャンペーン期間中 体験0円</p>';
-  document.body.appendChild(sticky);
+  var runDeferred=function(){
 
-  /* ============================================================
-     3. LIGHTBOX — body末尾に動的生成
-     ============================================================ */
-  var lb=document.createElement('div');
-  lb.id='ap-lb';
-  lb.setAttribute('style','position:fixed;inset:0;z-index:200000;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;cursor:zoom-out;');
-  lb.innerHTML='<span style="position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#fff;">&times;</span><img src="" alt="" style="max-width:92%;max-height:85vh;object-fit:contain;border-radius:8px;">';
-  document.body.appendChild(lb);
+    /* 2. STICKY CTA — 初期表示は display:none、スクロール後に表示 */
+    var sticky=document.createElement('div');
+    sticky.id='ap-sticky-injected';
+    sticky.setAttribute('style','position:fixed;bottom:0;left:0;right:0;width:100%;max-width:480px;margin:0 auto;background:rgba(251,251,253,0.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:0.5px solid rgba(0,0,0,0.06);padding:10px 20px;display:none;flex-direction:column;align-items:center;gap:3px;z-index:99999;box-sizing:border-box;font-family:-apple-system,sans-serif;');
+    sticky.innerHTML='<a href="'+BOOKING+'" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:340px;background:#0071e3;color:#fff;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;text-decoration:none;box-sizing:border-box;">無料体験を予約する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;flex-shrink:0;opacity:0.85;" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>'
+      +'<p id="ap-sticky-ctx" style="font-size:11px;font-weight:500;color:#6e6e73;text-align:center;min-height:16px;margin:0;">期間限定 体験0円</p>';
+    document.body.appendChild(sticky);
 
-  /* ============================================================
-     4. REVEAL animation
-     ============================================================ */
-  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.ap-wrap .ap-reveal').forEach(function(el){io.observe(el)});
+    /* 3. LIGHTBOX — クリック時まで非表示 */
+    var lb=document.createElement('div');
+    lb.id='ap-lb';
+    lb.setAttribute('style','position:fixed;inset:0;z-index:200000;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;cursor:zoom-out;');
+    lb.innerHTML='<span style="position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#fff;">&times;</span><img src="" alt="" style="max-width:92%;max-height:85vh;object-fit:contain;border-radius:8px;">';
+    document.body.appendChild(lb);
 
-  /* ============================================================
-     5. STICKY show/hide + context-aware message
-     ============================================================ */
-  var hero=document.querySelector('.ap-hero');
-  var stickyCtx=document.getElementById('ap-sticky-ctx');
-  var priceEl=document.getElementById('ap-price');
-  var faqEls=document.querySelectorAll('.ap-faq');
-  var lastFaq=faqEls.length?faqEls[faqEls.length-1]:null;
-  var msgs=[
-    {el:null,    text:'キャンペーン期間中 体験0円'},
-    {el:priceEl, text:'1回あたり7,500円〜 ／ 入会金0円'},
-    {el:lastFaq, text:'予約は60秒 ／ キャンセル無料 ／ 勧誘なし'}
-  ];
-  var currentMsg='';
+    /* 4. REVEAL animation */
+    var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.ap-wrap .ap-reveal').forEach(function(el){io.observe(el)});
 
-  window.addEventListener('scroll',function(){
-    if(!hero)return;
-    var r=hero.getBoundingClientRect();
-    var show=r.bottom<44;
-    sticky.style.display=show?'flex':'none';
+    /* 5. STICKY show/hide + context-aware message */
+    var hero=document.querySelector('.ap-hero');
+    var stickyCtx=document.getElementById('ap-sticky-ctx');
+    var segmentsEl=document.getElementById('ap-segments');
+    var trainerEl=document.getElementById('ap-trainer');
+    var priceEl=document.getElementById('ap-price');
+    var finalCtaEl=document.getElementById('ap-final-cta');
+    var faqEls=document.querySelectorAll('.ap-faq');
+    var lastFaq=faqEls.length?faqEls[faqEls.length-1]:null;
+    var msgs=[
+      {el:null,        text:'期間限定 体験0円'},
+      {el:segmentsEl,  text:'腰痛・シニア・短期集中、個別対応'},
+      {el:trainerEl,   text:'経験豊富な2名のトレーナーが担当'},
+      {el:priceEl,     text:'1回あたりXX,XXX円〜 ／ 入会金0円'},
+      {el:lastFaq,     text:'予約は60秒 ／ キャンセル無料 ／ 勧誘なし'}
+    ];
+    var currentMsg='';
 
-    var newMsg=msgs[0].text;
-    for(var i=msgs.length-1;i>=1;i--){
-      if(msgs[i].el){
-        var mr=msgs[i].el.getBoundingClientRect();
-        if(mr.top<window.innerHeight*0.5){newMsg=msgs[i].text;break}
-      }
-    }
-    if(newMsg!==currentMsg&&stickyCtx){
-      stickyCtx.style.opacity='0';
-      setTimeout(function(){stickyCtx.textContent=newMsg;stickyCtx.style.opacity='1';},150);
-      currentMsg=newMsg;
-    }
-  },{passive:true});
+    /* scroll 리스너 — rAF로 throttling해서 TBT 영향 최소화 */
+    var scrollPending=false;
+    window.addEventListener('scroll',function(){
+      if(scrollPending)return;
+      scrollPending=true;
+      requestAnimationFrame(function(){
+        scrollPending=false;
+        if(!hero)return;
+        var r=hero.getBoundingClientRect();
+        var showAfterHero=r.bottom<44;
+        var hideAtFinal=false;
+        if(finalCtaEl){
+          var fr=finalCtaEl.getBoundingClientRect();
+          if(fr.top<window.innerHeight*0.75)hideAtFinal=true;
+        }
+        var show=showAfterHero&&!hideAtFinal;
+        sticky.style.display=show?'flex':'none';
 
-  /* ============================================================
-     6. LIGHTBOX click handlers
-     ============================================================ */
-  var lbImg=lb.querySelector('img');
-  var lbClose=lb.querySelector('span');
-  document.querySelectorAll('.ap-gallery-item img').forEach(function(img){
-    img.style.cursor='zoom-in';
-    img.addEventListener('click',function(){
-      lbImg.src=this.src;lbImg.alt=this.alt;
-      lb.style.display='flex';document.body.style.overflow='hidden';
+        var newMsg=msgs[0].text;
+        for(var i=msgs.length-1;i>=1;i--){
+          if(msgs[i].el){
+            var mr=msgs[i].el.getBoundingClientRect();
+            if(mr.top<window.innerHeight*0.5){newMsg=msgs[i].text;break}
+          }
+        }
+        if(newMsg!==currentMsg&&stickyCtx){
+          stickyCtx.style.opacity='0';
+          setTimeout(function(){stickyCtx.textContent=newMsg;stickyCtx.style.opacity='1';},150);
+          currentMsg=newMsg;
+        }
+      });
+    },{passive:true});
+
+    /* 6. LIGHTBOX click handlers */
+    var lbImg=lb.querySelector('img');
+    var lbClose=lb.querySelector('span');
+    document.querySelectorAll('.ap-gallery-item img').forEach(function(img){
+      img.style.cursor='zoom-in';
+      img.addEventListener('click',function(){
+        lbImg.src=this.src;lbImg.alt=this.alt;
+        lb.style.display='flex';document.body.style.overflow='hidden';
+      });
     });
-  });
-  function closeLb(){lb.style.display='none';document.body.style.overflow=''}
-  lb.addEventListener('click',closeLb);
-  if(lbClose)lbClose.addEventListener('click',closeLb);
-  if(lbImg)lbImg.addEventListener('click',function(e){e.stopPropagation()});
+    function closeLb(){lb.style.display='none';document.body.style.overflow=''}
+    lb.addEventListener('click',closeLb);
+    if(lbClose)lbClose.addEventListener('click',closeLb);
+    if(lbImg)lbImg.addEventListener('click',function(e){e.stopPropagation()});
+  };
+
+  /* アイドル時間に逃がす — フォールバック付き */
+  if('requestIdleCallback' in window){
+    requestIdleCallback(runDeferred,{timeout:2000});
+  }else{
+    setTimeout(runDeferred,100);
+  }
 })();
 </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"無料体験の内容は？","acceptedAnswer":{"@type":"Answer","text":"約60分。カウンセリング＋トレーニング体験。持ち物は動きやすい服装のみ。シューズ・タオルは無料でお貸しします。"}},{"@type":"Question","name":"しつこい勧誘はありますか？","acceptedAnswer":{"@type":"Answer","text":"一切ありません。ご入会はご自身のペースでご判断ください。当日の入会も必須ではありません。"}},{"@type":"Question","name":"月会費以外の費用は？","acceptedAnswer":{"@type":"Answer","text":"入会金0円。年会費・施設費など、月会費以外の追加費用はかかりません。"}},{"@type":"Question","name":"女性トレーナーはいますか？","acceptedAnswer":{"@type":"Answer","text":"現在、Tokyo Flagship Storeには女性トレーナーは在籍しておりません。ただし、40〜60代の女性会員も多くご利用いただいており、完全マンツーマンの個別対応で、周りを気にせずご自身のペースでトレーニングいただけます。"}},{"@type":"Question","name":"駐車場はありますか？","acceptedAnswer":{"@type":"Answer","text":"専用駐車場はございません。最寄りのコインパーキングをご利用ください。最寄り駅から徒歩2分のため、電車でのご来店が便利です。"}},{"@type":"Question","name":"契約期間・解約の縛りはありますか？","acceptedAnswer":{"@type":"Answer","text":"長期契約の縛りはございません。月単位でのご利用が可能です。詳細は体験時にご説明いたします。"}}]}
+</script>
 
-</body>
-</html>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["HealthClub","ExerciseGym","SportsActivityLocation"],"name":"LUMEN Premier Studio Tokyo Flagship｜室内ゴルフ練習場＆パーソナルフィットネス","description":"東京都心エリア駅徒歩2分の完全マンツーマン パーソナルトレーニングジム。加圧・筋力・心拍・可動域改善など、腰痛改善からボディメイク・ゴルフパフォーマンスまで対応。室内ゴルフ練習場併設。","keywords":"パーソナルトレーニング,完全マンツーマン,パーソナルジム,加圧トレーニング,室内ゴルフ練習場,ゴルフレッスン,東京都心,最寄り駅エリア,隣接駅エリア,腰痛改善,ダイエット,ボディメイク,シニアトレーニング","foundingDate":"recent","parentOrganization":{"@type":"Organization","name":"株式会社 LUMEN SPORTS (仮名)","foundingDate":"1970s","url":"#","sameAs":"#"},"url":"#","telephone":"+81-3-XXXX-XXXX","address":{"@type":"PostalAddress","streetAddress":"○○ (非表示)","addressLocality":"東京都心","addressRegion":"東京都","postalCode":"XXX-XXXX","addressCountry":"JP"},"geo":{"@type":"GeoCoordinates","latitude":35.71190,"longitude":139.74976},"hasMap":"#map","areaServed":[{"@type":"City","name":"東京都心"},{"@type":"Place","name":"都心エリア"},{"@type":"Place","name":"最寄り駅エリア"},{"@type":"Place","name":"隣接駅エリア"},{"@type":"Place","name":"近接エリア"},{"@type":"Place","name":"近接エリア"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"XX","bestRating":"5"},"priceRange":"¥¥¥","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","PublicHolidays"],"opens":"10:00","closes":"20:00"}],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"パーソナルトレーニング（完全マンツーマン）","description":"担当トレーナーによる50分の完全マンツーマンセッション。腰痛改善・姿勢改善・ダイエット・ボディメイク・シニアトレーニング・ゴルフパフォーマンスに対応。"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"室内ゴルフ練習場","description":"TPI認定ゴルフフィットネスインストラクターによる可動域改善・スイング安定・飛距離UPのトレーニング。"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"加圧トレーニング","description":"加圧トレーニングインストラクターによる短時間・高効果のトレーニング。シニア・運動初心者から経験者まで。"}}]}
+</script>
