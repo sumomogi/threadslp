@@ -53,10 +53,21 @@
   }
   .cta-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
+  .portfolio-scroll {
+    display: flex; gap: 10px; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    margin: 0 -20px; padding: 4px 20px 12px; scrollbar-width: none;
+  }
+  .portfolio-scroll::-webkit-scrollbar { display: none; }
+
   .portfolio-item {
-    background: var(--pill-bg); border-radius: 16px; padding: 24px 20px;
-    text-decoration: none; color: inherit; display: block;
-    border: 1px solid rgba(0,0,0,0.04);
+    flex: 0 0 220px; scroll-snap-align: start;
+    display: flex; flex-direction: column; justify-content: space-between;
+    aspect-ratio: 4/5; padding: 28px 22px 22px;
+    background: var(--card); border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    text-decoration: none; color: inherit;
     transition: box-shadow 0.2s, transform 0.2s;
   }
   .portfolio-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
@@ -64,8 +75,8 @@
     font-size: 10px; font-weight: 700; letter-spacing: 2px;
     color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
   }
-  .portfolio-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
-  .portfolio-desc { font-size: 12.5px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .portfolio-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
+  .portfolio-desc { font-size: 12px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; flex-grow: 1; }
   .portfolio-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
   .portfolio-chip {
     font-size: 11px; color: var(--muted);
@@ -122,40 +133,39 @@
   </div>
 
   <!-- PORTFOLIO -->
-  <div class="work-card">
+  <div class="archive-group">
     <div class="section-label">Portfolio</div>
+    <div class="portfolio-scroll">
 
-    <a class="portfolio-item" href="portfolio-bb-hair.html" target="_blank" rel="noopener">
-      <div class="portfolio-eyebrow">로컬 비즈니스 웹사이트 · 바버샵</div>
-      <div class="portfolio-title">글래스모피즘 바버샵 사이트</div>
-      <div class="portfolio-desc">
-        지역 검색 발견성 최대화를 위한 BarberShop Schema + FAQPage 구조화 데이터. 스크롤 연동 Nav 블러, 반투명 글래스 카드 UI.
-      </div>
-      <div class="portfolio-chips">
-        <span class="portfolio-chip">HTML / CSS</span>
-        <span class="portfolio-chip">로컬 SEO</span>
-        <span class="portfolio-chip">Schema.org</span>
-        <span class="portfolio-chip">Glassmorphism</span>
-      </div>
-      <span class="portfolio-link">페이지 보기 →</span>
-    </a>
+      <a class="portfolio-item" href="portfolio-bb-hair.html" target="_blank" rel="noopener">
+        <div>
+          <div class="portfolio-eyebrow">로컬 비즈니스 · 바버샵</div>
+          <div class="portfolio-title">글래스모피즘 바버샵 사이트</div>
+          <div class="portfolio-desc">지역 검색 발견성을 위한 Schema.org 구조화 데이터. 스크롤 연동 Nav 블러, 반투명 글래스 카드 UI.</div>
+          <div class="portfolio-chips">
+            <span class="portfolio-chip">HTML / CSS</span>
+            <span class="portfolio-chip">로컬 SEO</span>
+            <span class="portfolio-chip">Glassmorphism</span>
+          </div>
+        </div>
+        <span class="portfolio-link">페이지 보기 →</span>
+      </a>
 
-    <a class="portfolio-item" href="portfolio-lp-gym.html" target="_blank" rel="noopener">
-      <div class="portfolio-eyebrow">검색광고 LP · 퍼스널 트레이닝 짐</div>
-      <div class="portfolio-title">Apple 감성 모바일 랜딩페이지</div>
-      <div class="portfolio-desc">
-        검색광고 유입 전용 LP. 스크롤 애니메이션, 스티키 CTA, 횡스크롤 갤러리, 컨텍스트 어웨어 메시지 전환까지 구현.
-        모바일 퍼스트, 전환 최적화 구조.
-      </div>
-      <div class="portfolio-chips">
-        <span class="portfolio-chip">HTML / CSS</span>
-        <span class="portfolio-chip">모바일 퍼스트</span>
-        <span class="portfolio-chip">검색광고 전용</span>
-        <span class="portfolio-chip">Scroll Animation</span>
-        <span class="portfolio-chip">Sticky CTA</span>
-      </div>
-      <span class="portfolio-link">페이지 보기 →</span>
-    </a>
+      <a class="portfolio-item" href="portfolio-lp-gym.html" target="_blank" rel="noopener">
+        <div>
+          <div class="portfolio-eyebrow">검색광고 LP · 퍼스널 짐</div>
+          <div class="portfolio-title">Apple 감성 모바일 랜딩페이지</div>
+          <div class="portfolio-desc">스크롤 애니메이션, 스티키 CTA, 횡스크롤 갤러리, 컨텍스트 어웨어 메시지 전환. 전환 최적화 구조.</div>
+          <div class="portfolio-chips">
+            <span class="portfolio-chip">모바일 퍼스트</span>
+            <span class="portfolio-chip">Scroll Animation</span>
+            <span class="portfolio-chip">Sticky CTA</span>
+          </div>
+        </div>
+        <span class="portfolio-link">페이지 보기 →</span>
+      </a>
+
+    </div>
   </div>
 
   <!-- HOW IT WORKS -->
